@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import TaskCard from "./TaskCard";
 // import { useState, useEffect } from "react";
 
 function TaskList({ tasks }) {
@@ -9,10 +10,7 @@ function TaskList({ tasks }) {
   return (
     <Fragment key={"10"}>
       {tasks.map((task) => (
-        <section key={task.id}>
-          <h1>{task.title}</h1>
-          <p>{task.description}</p>
-        </section>
+        <TaskCard key={task.id} task={task}/>
       ))}
     </Fragment>
   );
