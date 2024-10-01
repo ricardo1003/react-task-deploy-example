@@ -1,8 +1,11 @@
 import { Fragment } from "react";
 import TaskCard from "./TaskCard";
-// import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { TaskContext } from "../context/TaskContext";
 
-function TaskList({ tasks, deleteTask }) {
+function TaskList() {
+  const { tasks } = useContext(TaskContext);
+
   if (tasks.lenght === 1) {
     return <h1>añade algo pe</h1>;
   }
@@ -10,7 +13,7 @@ function TaskList({ tasks, deleteTask }) {
   return (
     <Fragment key={"10"}>
       {tasks.map((task) => (
-        <TaskCard key={task.id} task={task} deleteTask={deleteTask}/>
+        <TaskCard key={task.id} task={task} />
       ))}
     </Fragment>
   );
